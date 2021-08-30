@@ -17,5 +17,5 @@
 #### install
 
 ```bash
-> enn-fc install
+> efc install
 ```
