@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+const path = require('path')
+const bootstrap = require('@atools/cf').bootstrap
+
+bootstrap.hooks.listen('will-inject', async (next) => {
+  await next()
+})
+
+bootstrap({
+  root: path.join(__dirname, '..', 'lib', 'commands'),
+  version: require('../package.json').version
+})

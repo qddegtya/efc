@@ -1,0 +1,41 @@
+{
+  "name": "@atools/fc",
+  "version": "1.0.0",
+  "description": "Tiny devtool for formily component.",
+  "main": "index.js",
+  "bin": {
+    "efc": "./bin/efc"
+  },
+  "scripts": {
+    "cf-add": "./node_modules/.bin/cf add --output=./src/commands --template=./src/commands/cmd.tpl",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint --ext .js src/** --fix",
+    "dev": "rimraf ./lib && ./node_modules/.bin/babel src --out-dir lib --watch",
+    "build": "rimraf ./lib && ./node_modules/.bin/babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.enncloud.cn:enn-fe/fc.git"
+  },
+  "keywords": [
+    "formily",
+    "vue",
+    "react",
+    "ts"
+  ],
+  "engineStrict": true,
+  "engines": {
+    "node": ">=8.10"
+  },
+  "author": "xiaoa",
+  "license": "MIT",
+  "devDependencies": {
+    "@atools/cf": "^1.0.10",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "rimraf": "^3.0.2"
+  }
+}
