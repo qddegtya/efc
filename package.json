@@ -6,6 +6,9 @@
   "bin": {
     "efc": "./bin/efc"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "cf-add": "./node_modules/.bin/cf add --output=./src/commands --template=./src/commands/cmd.tpl",
     "test": "echo \"Error: no test specified\" && exit 1",
