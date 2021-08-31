@@ -13,8 +13,8 @@
     "cf-add": "./node_modules/.bin/cf add --output=./src/commands --template=./src/commands/cmd.tpl",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint --ext .js src/** --fix",
-    "dev": "rimraf ./lib && ./node_modules/.bin/babel src --out-dir lib --watch",
-    "build": "rimraf ./lib && ./node_modules/.bin/babel src --out-dir lib"
+    "dev": "rimraf ./lib && ./node_modules/.bin/babel src/commands --out-dir lib/commands --watch",
+    "build": "rimraf ./lib && ./node_modules/.bin/babel src/commands --out-dir lib/commands"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "@babel/preset-env": "^7.15.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "webpack": "^5.51.1"
   }
 }

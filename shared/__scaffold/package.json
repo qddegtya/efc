@@ -1,0 +1,23 @@
+{
+  "name": "component-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc src/*.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@formily/core": "^2.0.0-rc.4",
+    "@formily/element": "^2.0.0-rc.4",
+    "@formily/vue": "^2.0.0-rc.4",
+    "@vue/composition-api": "^1.1.3",
+    "element-ui": "^2.15.5"
+  }
+}

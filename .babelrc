@@ -1,4 +1,9 @@
 {
+  "ignore": [
+    "Builder",
+    "DevServer",
+    "__scaffold"
+  ],
   "presets": [
     [
       "@babel/preset-env",

@@ -14,8 +14,14 @@
 
 ### Commands
 
-#### install
+#### init
 
 ```bash
-> efc install
+> efc init
+```
+
+#### dev
+
+```bash
+> efc dev
 ```
