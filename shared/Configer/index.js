@@ -23,6 +23,7 @@ const Configer = ({ context, builder, devMode = true }) => {
       externals: {
         "vue@next": "Vue",
         vue: "Vue",
+        "@vue/composition-api": "VueCompositionAPI"
       },
       module: {
         rules: devMode

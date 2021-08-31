@@ -1,8 +1,8 @@
 <template>
-  <Form :form="form">
+  <FormProvider :form="form">
     <Field
-      name="linkage"
-      title="联动选择框"
+      name="select"
+      title="选择框"
       :decorator="[FormItem]"
       :component="[
         Select,
@@ -12,97 +12,43 @@
           },
         },
       ]"
-      :enum="[
-        { label: '发请求1', value: 1 },
-        { label: '发请求2', value: 2 },
-      ]"
-    />
-    <Field
-      name="[Select]"
-      title="异步选择框"
-      :decorator="[FormItem]"
-      :component="[
-        Select,
+      :dataSource="[
         {
-          style: {
-            width: '240px',
-          },
+          label: '选项1',
+          value: 1,
+        },
+        {
+          label: '选项2',
+          value: 2,
         },
       ]"
     />
-    <Submit @submit="onSubmit">提交</Submit>
-  </Form>
+    <Submit @submit="log">提交</Submit>
+  </FormProvider>
 </template>
 
 <script>
-import { createForm, onFieldReact } from "@formily/core";
-import { Field } from "@formily/vue";
-import { action } from "@formily/reactive";
-import { Form, FormItem, Submit, Reset } from "@formily/element";
+import { createForm } from '@formily/core'
+import { FormProvider, Field } from '@formily/vue'
+import { FormItem, Submit } from '@formily/element'
+
 import "element-ui/packages/theme-chalk/src/index.scss";
+import Select from '@root/index.ts'
 
-import Select from "@root/index.ts";
-
-const useAsyncDataSource = (pattern, service) => {
-  onFieldReact(pattern, (field) => {
-    field.loading = true;
-    service(field).then(
-      action.bound((data) => {
-        field.dataSource = data;
-        field.loading = false;
-      })
-    );
-  });
-};
-
-const form = createForm({
-  effects: () => {
-    useAsyncDataSource("select", async (field) => {
-      const linkage = field.query("linkage").get("value");
-      if (!linkage) return [];
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          if (linkage === 1) {
-            resolve([
-              {
-                label: "AAA",
-                value: "aaa",
-              },
-              {
-                label: "BBB",
-                value: "ccc",
-              },
-            ]);
-          } else if (linkage === 2) {
-            resolve([
-              {
-                label: "CCC",
-                value: "ccc",
-              },
-              {
-                label: "DDD",
-                value: "ddd",
-              },
-            ]);
-          }
-        }, 1500);
-      });
-    });
-  },
-});
+const form = createForm()
 export default {
-  components: { Form, Field, Submit, Reset },
+  components: { FormProvider, Field, Submit },
   data() {
     return {
-      form,
       FormItem,
       Select,
-    };
+      form,
+    }
   },
   methods: {
-    onSubmit(value) {
-      console.log(value);
+    log(value) {
+      console.log(value)
     },
   },
-};
+}
 </script>
