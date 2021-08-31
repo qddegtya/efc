@@ -3,6 +3,15 @@ const path = require('path')
 const bootstrap = require('@atools/cf').bootstrap
 
 bootstrap.hooks.listen('will-inject', async (next) => {
+  console.log(`
+  ███████╗███████╗ ██████╗
+  ██╔════╝██╔════╝██╔════╝
+  █████╗  █████╗  ██║     
+  ██╔══╝  ██╔══╝  ██║     
+  ███████╗██║     ╚██████╗
+  ╚══════╝╚═╝      ╚═════╝     
+  `)
+  
   await next()
 })
 
