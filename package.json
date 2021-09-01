@@ -34,7 +34,6 @@
   "author": "xiaoa",
   "license": "MIT",
   "devDependencies": {
-    "@atools/cf": "^1.0.10",
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
@@ -42,6 +41,7 @@
     "eslint": "^7.32.0"
   },
   "dependencies": {
+    "@atools/cf": "^1.0.10",
     "css-loader": "^6.2.0",
     "express": "^4.17.1",
     "inquirer": "^7.3.3",
