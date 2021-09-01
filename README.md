@@ -6,6 +6,12 @@
 
 * node version >= 8.10
 
+### Features
+
+* 🚀 init / dev / build / publish 一键式体验
+* ⚙️ 自动安装依赖
+* 🌍 完美支持 HMR
+
 ### Install
 
 ```bash
