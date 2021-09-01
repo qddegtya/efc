@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const path = require('path')
-const bootstrap = require('@atools/cf').bootstrap
+const bootstrap = require('xaefc').bootstrap
 
 bootstrap.hooks.listen('will-inject', async (next) => {
   console.log(`
