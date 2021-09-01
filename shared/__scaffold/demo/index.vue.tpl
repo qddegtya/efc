@@ -5,7 +5,7 @@
       title="选择框"
       :decorator="[FormItem]"
       :component="[
-        Select,
+        ${'component'},
         {
           style: {
             width: '240px',
@@ -33,7 +33,7 @@ import { FormProvider, Field } from '@formily/vue'
 import { FormItem, Submit } from '@formily/element'
 
 import "element-ui/packages/theme-chalk/src/index.scss";
-import Select from '@root/index.ts'
+import ${'component'} from '@root/index.ts'
 
 const form = createForm()
 export default {
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       FormItem,
-      Select,
+      ${'component'},
       form,
     }
   },

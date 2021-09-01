@@ -18,32 +18,5 @@ export default class Build extends BC {
   async do() {
     const cwd = this.context.cwd
     const ps = path.resolve
-
-    const builder = Builder({
-      context: {
-        entry: {
-          main: ps(cwd, 'src/index.ts'),
-          style: ps(cwd, 'src/style.ts'),
-        },
-        output: {
-          path: ps(cwd, 'dist/cjs'),
-        },
-      },
-      abcOptions: JSON.parse(fs.readFileSync(ps(cwd, './abc.json'), 'utf8')),
-    })
-
-    builder.run((err, stats) => {
-      if (err) throw err
-
-      console.log(
-        stats.toString({
-          colors: true,
-        })
-      )
-
-      builder.close((closeErr) => {
-        throw closeErr
-      })
-    })
   }
 }

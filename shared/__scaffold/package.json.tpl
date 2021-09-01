@@ -1,17 +1,18 @@
 {
-  "name": "component-demo",
+  "name": "${'pkgName'}",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "browser": "",
+  "module": "",
   "directories": {
-    "example": "example",
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "",
     "build": "tsc src/*.ts"
   },
-  "author": "",
+  "author": "${'author'}",
   "license": "MIT",
   "dependencies": {
     "@formily/core": "^2.0.0-rc.4",

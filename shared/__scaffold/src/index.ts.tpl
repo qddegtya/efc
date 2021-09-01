@@ -48,9 +48,9 @@ const SelectOption = defineComponent<SelectProps>({
   },
 })
 
-export const Select = connect(
+export const ${'component'} = connect(
   SelectOption,
   mapProps({ dataSource: 'options', loading: true })
 )
 
-export default Select
+export default ${'component'}

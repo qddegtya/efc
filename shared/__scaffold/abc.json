@@ -1,8 +1,5 @@
 {
-  "builder": {
-    
-  },
-
+  "builder": {},
   "devServer": {
     "port": 8099
   }

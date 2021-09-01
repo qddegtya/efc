@@ -5,6 +5,8 @@ const BC = require('@atools/cf').BC
 const DevServer = require('../../../shared/DevServer')
 const path = require('path')
 const fs = require('fs')
+const execSync = require('child_process').execSync
+const open = require('open')
 
 export default class Dev extends BC {
   static command = 'dev';
@@ -30,8 +32,8 @@ export default class Dev extends BC {
           library: {
             name: 'efc-demo-module',
             type: 'umd',
-            export: 'default'
-          }
+            export: 'default',
+          },
         },
 
         resolve: {
@@ -43,11 +45,33 @@ export default class Dev extends BC {
       abcOptions,
     })
 
+    try {
+      // 自动执行依赖安装
+      console.log('🚀 自动执行依赖安装......')
+
+      execSync('npm install', {
+        cwd,
+        stdio: [0, 1, 2],
+      })
+    } catch (error) {
+      console.log(error)
+      console.log('❌ 自动执行依赖安装失败, 请手动执行 npm install')
+
+      process.exit(0)
+    }
+
     instance.waitUntilValid(() => {
       const port = abcOptions.devServer.port || 3000
+      const openUrl = 'http://0.0.0.0:8099/playground'
 
       app.listen(port, () => {
-        console.log(`🌍 [efc] dev server start listening on: ${port}.`)
+        console.log(
+          `🌍 [efc] dev server start listening on: ${port}. URL: ${openUrl}`
+        )
+
+        setTimeout(async () => {
+          await open(openUrl)
+        }, 500)
       })
     })
   }
