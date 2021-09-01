@@ -2,15 +2,14 @@
   "name": "${'pkgName'}",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "browser": "",
+  "main": "lib/index.js",
+  "browser": "lib/index.js",
   "module": "",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "",
-    "build": "tsc src/*.ts"
+    "test": ""
   },
   "author": "${'author'}",
   "license": "MIT",

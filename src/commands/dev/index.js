@@ -49,10 +49,8 @@ export default class Dev extends BC {
         stdio: [0, 1, 2],
       })
     } catch (error) {
-      console.log(error)
       console.log('❌ 自动执行依赖安装失败, 请手动执行 npm install')
-
-      process.exit(0)
+      throw error
     }
 
     instance.waitUntilValid(() => {

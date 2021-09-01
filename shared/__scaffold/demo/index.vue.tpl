@@ -34,6 +34,7 @@ import { FormItem, Submit } from '@formily/element'
 
 import "element-ui/packages/theme-chalk/src/index.scss";
 import ${'component'} from '@root/index.ts'
+import '@root/style.ts'
 
 const form = createForm()
 export default {

@@ -59,7 +59,7 @@ const Configer = ({ context, builder, devMode = true }) => {
                 ],
               },
               {
-                test: /\.s[ac]ss$/i,
+                test: /\.s[ac]ss|.css$/i,
                 use: [
                   rs("style-loader"),
                   rs("css-loader"),
