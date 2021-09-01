@@ -59,7 +59,11 @@
     └── tsconfig.json // tsconfig.json 默认不需要做任何修改
 ```
 
-* `@root` 默认为 `src` 根目录的 `alias`，因此你可以这样引入 `import '@root/index.ts'`，`demo.vue` 中可以看到示范
+> 💡 Tips
+
+* `@root` 默认为 `src` 根目录的 `alias`，因此你可以像这样引入模块 `import '@root/index.ts'`，`demo.vue` 中可以看到示范，好处是当构建器升级时，不需要关心 `src` 路径的变更
+* 构建编译时开启了 `allowJs`，因此 `src` 下可以使用 `js` 和 `ts` 混合开发模式
+* 样式文件支持 `css` / `sass` / `scss`，因此你可以在`调试的时候`大胆引入三方的 `css`
 
 #### dev
 
