@@ -62,7 +62,7 @@ export default class Dev extends BC {
 
     instance.waitUntilValid(() => {
       const port = abcOptions.devServer.port || 3000
-      const openUrl = 'http://0.0.0.0:8099/playground'
+      const openUrl = `http://0.0.0.0:${port}/playground`
 
       app.listen(port, () => {
         console.log(
