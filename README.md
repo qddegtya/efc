@@ -76,3 +76,12 @@
 ```bash
 > efc build
 ```
+
+### Thanks
+
+* [ajs](https://github.com/qddegtya/ajs)
+* [cf - ✨ a guided and prescriptive CLI creator.](https://github.com/qddegtya/cf)
+* webpack
+* babel
+* typescript
+* vue
