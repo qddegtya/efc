@@ -1,6 +1,7 @@
 const path = require("path");
 const rs = require.resolve;
 const { VueLoaderPlugin } = require("vue-loader");
+const webpack = require("webpack");
 
 const Configer = ({ context, builder, devMode = true }) => {
   return {
@@ -8,7 +9,17 @@ const Configer = ({ context, builder, devMode = true }) => {
       mode: devMode ? "development" : "production",
       entry: devMode
         ? {
-            demo: context?.entry?.demo,
+            demo: {
+              import: context?.entry?.demo,
+              library: {
+                name: "[name]",
+                type: "umd",
+                export: "default",
+              },
+            },
+            "webpack-hot-middleware/client": rs(
+              "webpack-hot-middleware/client"
+            ),
           }
         : {},
       output: {
@@ -23,7 +34,7 @@ const Configer = ({ context, builder, devMode = true }) => {
       externals: {
         "vue@next": "Vue",
         vue: "Vue",
-        "@vue/composition-api": "VueCompositionAPI"
+        "@vue/composition-api": "VueCompositionAPI",
       },
       module: {
         rules: devMode
@@ -33,6 +44,9 @@ const Configer = ({ context, builder, devMode = true }) => {
                 use: [
                   {
                     loader: rs("vue-loader"),
+                    options: {
+                      hotReload: true,
+                    },
                   },
                 ],
               },
@@ -63,7 +77,12 @@ const Configer = ({ context, builder, devMode = true }) => {
       },
       plugins: [
         new VueLoaderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
       ],
+      optimization: {
+        runtimeChunk: "single",
+      },
     },
     ...(devMode
       ? {

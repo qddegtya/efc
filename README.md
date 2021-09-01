@@ -1,6 +1,6 @@
 ### About
 
-> 🔧 Tiny devtool for formily component.
+> 🔧 Elegant devtool for formily component.
 
 ### Requirements
 
@@ -9,7 +9,7 @@
 ### Install
 
 ```bash
-> npm install @atools/fc -g
+> npm install @atools/efc -g
 ```
 
 ### Commands

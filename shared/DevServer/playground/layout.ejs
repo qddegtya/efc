@@ -8,7 +8,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@vue/composition-api@1.1.4"></script>
+    <script src="<%= assets.runtimeJs %>"></script>
+    <script src="<%= assets.hmrClientJs %>"></script>
     <script src="<%= assets.path %>"></script>
-    <script>(new window.Vue(window['efc-demo-module'])).$mount('#app');</script>
+    <script>
+      new window.Vue({ render: createElement => createElement(window['demo']) }).$mount("#app");
+    </script>
   </body>
 </html>

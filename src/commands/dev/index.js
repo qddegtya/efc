@@ -28,12 +28,7 @@ export default class Dev extends BC {
           demo: ps(cwd, 'demo/index.vue'),
         },
         output: {
-          name: '[name].js',
-          library: {
-            name: 'efc-demo-module',
-            type: 'umd',
-            export: 'default',
-          },
+          name: '[name].js'
         },
 
         resolve: {

@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const Configer = require("../Configer");
 const webpackDevMiddleware = require("webpack-dev-middleware");
+const webpackHotMiddleware = require("webpack-hot-middleware");
 const express = require("express");
 const path = require("path");
 
@@ -27,12 +28,15 @@ const DevServer = ({ context, abcOption }) => {
         title: "playground",
       },
       assets: {
+        runtimeJs: "./runtime.js",
         path: "./demo.js",
+        hmrClientJs: "./webpack-hot-middleware/client.js"
       },
     });
   });
 
   app.use(instance);
+  app.use(webpackHotMiddleware(compiler));
 
   return {
     app,
