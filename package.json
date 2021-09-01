@@ -1,6 +1,6 @@
 {
-  "name": "@atools/efc",
-  "version": "1.0.1",
+  "name": "xaefc",
+  "version": "1.0.0",
   "description": "Elegant devtool for formily component.",
   "main": "index.js",
   "bin": {

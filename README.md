@@ -28,7 +28,7 @@
 ### Install
 
 ```bash
-> npm install @atools/efc -g
+> npm install xaefc -g
 ```
 
 ### Commands
