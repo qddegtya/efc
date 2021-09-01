@@ -4,7 +4,6 @@
   "description": "",
   "main": "lib/index.js",
   "browser": "lib/index.js",
-  "module": "",
   "directories": {
     "test": "tests"
   },
