@@ -67,7 +67,7 @@ export default class Init extends BC {
                 file.basename = 'package.json'
                 file.contents = Buffer.from(
                   tpl.exec(file.contents.toString(), {
-                    pkgName: `@efc/component-${name}`,
+                    pkgName: `@formily-components/efc-${name}`,
                     author,
                   }),
                   'utf8'
