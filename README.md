@@ -12,6 +12,19 @@
 * ⚙️ 自动安装依赖
 * 🌍 完美支持 HMR
 
+### abc.json
+
+> all builder config.
+
+```json
+{
+  "builder": {},
+  "devServer": {
+    "port": 8099
+  }
+}
+```
+
 ### Install
 
 ```bash
@@ -30,4 +43,10 @@
 
 ```bash
 > efc dev
+```
+
+#### build
+
+```bash
+> efc build
 ```
