@@ -14,8 +14,8 @@
     "cf-add": "./node_modules/.bin/cf add --output=./src/commands --template=./src/commands/cmd.tpl",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint --ext .js src/** --fix",
-    "dev": "rimraf ./lib && ./node_modules/.bin/babel src/commands --out-dir lib/commands --watch",
-    "build": "rimraf ./lib && ./node_modules/.bin/babel src/commands --out-dir lib/commands"
+    "dev": "./node_modules/.bin/rimraf ./lib && ./node_modules/.bin/babel src/commands --out-dir lib/commands --watch",
+    "build": "./node_modules/.bin/rimraf ./lib && ./node_modules/.bin/babel src/commands --out-dir lib/commands"
   },
   "repository": {
     "type": "git",
@@ -38,7 +38,8 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "@atools/cf": "^1.0.10",
@@ -48,7 +49,6 @@
     "inquirer": "^7.3.3",
     "map-stream": "^0.0.7",
     "open": "^8.2.1",
-    "rimraf": "^3.0.2",
     "sass": "^1.38.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
